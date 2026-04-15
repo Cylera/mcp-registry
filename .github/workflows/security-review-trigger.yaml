@@ -33,9 +33,9 @@ jobs:
 
       - name: Create GitHub App token
         id: app-token
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@v3
         with:
-          app-id: ${{ vars.MCP_REGISTRY_BOT_APP_ID }}
+          client-id: ${{ vars.MCP_REGISTRY_BOT_APP_ID }}
           private-key: ${{ secrets.MCP_REGISTRY_BOT_PRIVATE_KEY }}
           owner: docker
           repositories: ${{ steps.parse-repo.outputs.name }}

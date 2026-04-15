@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main for tooling
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: main
           path: main-tooling
@@ -28,7 +28,7 @@ jobs:
           go build -o ../bin/clean ./cmd/clean
 
       - name: Checkout PR for validation
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           path: pr-workspace
           fetch-depth: 0
@@ -48,7 +48,7 @@ jobs:
         uses: docker/setup-docker-action@v4
 
       - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v4
 
       - name: Set up Docker Compose
         uses: docker/setup-compose-action@v1
